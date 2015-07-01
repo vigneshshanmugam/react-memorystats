@@ -5,7 +5,7 @@ const TestComponent = React.createClass({
 
   render() {
     return <div className="test">
-      <ReactMemoryStatsComponent/>
+      <ReactMemoryStatsComponent corner='bottomLeft'/>
     </div>
   }
 

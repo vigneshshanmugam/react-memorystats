@@ -3,8 +3,6 @@ import MemoryStats from './src/memory-stats.js';
 
 let statsStyle = {
   position: 'fixed',
-  right: '0px',
-  bottom: '0px'
 }
 
 let ReactMemoryStatsComponent = React.createClass({
@@ -12,26 +10,46 @@ let ReactMemoryStatsComponent = React.createClass({
   getInitialState() {
     let Stats = new MemoryStats();
     return {
-      stats : Stats
+      stats : Stats,
+      corner: this.props.corner || 'topRight'
     }
   },
 
   componentDidMount() {
     let rAFloop = () => {
-        this.state.stats.update();
-        requestAnimationFrame(rAFloop);
+      this.refs.statsEle.getDOMNode().appendChild(this.state.stats.domElement);
+      this.state.stats.update();
+      requestAnimationFrame(rAFloop);
     }
     requestAnimationFrame(rAFloop);
   },
 
-  getMarkup() {
-    return {
-      __html : this.state.stats.domElement.innerHTML
+  getCorner() {
+    switch(this.state.corner) {
+      case 'topLeft':
+        statsStyle.top = '0px';
+        statsStyle.left = '0px';
+        break;
+      case 'topRight':
+        statsStyle.top = '0px';
+        statsStyle.right = '0px';
+        break;
+      case 'bottomLeft':
+        statsStyle.bottom = '0px';
+        statsStyle.left = '0px';
+        break;
+      case 'bottomRight':
+        statsStyle.bottom = '0px';
+        statsStyle.right = '0px';
+        break;
     }
+    return statsStyle;
   },
 
   render() {
-    return <div style={statsStyle} dangerouslySetInnerHTML={this.getMarkup()}>
+    statsStyle = this.getCorner();
+
+    return <div style={statsStyle} ref='statsEle'>
     </div>
   }
 

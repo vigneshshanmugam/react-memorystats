@@ -18,5 +18,5 @@ module.exports = {
                 loader: 'babel-loader?experimental'
             }
         ]
-    },
+    }
 }
