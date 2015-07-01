@@ -4,7 +4,9 @@ This Component is based on Paul Irish's [memory-stats](https://github.com/paulir
 
 ### Installation
 
+```javascript
 npm install react-memorystats --save
+```
 
 ### Usage
 
@@ -31,3 +33,12 @@ google-chrome --enable-precise-memory-info --enable-memory-info
 ```
 
 Otherwise the results from performance.memory are bucketed and less useful.
+
+
+### Development
+
+```javascript
+npm install
+npm start
+
+```
