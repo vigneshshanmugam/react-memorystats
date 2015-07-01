@@ -1,11 +1,11 @@
 import React from 'react';
-import MemoryStats from './src/memory-stats.js';
+import MemoryStats from './memory-stats.js';
 
 let statsStyle = {
   position: 'fixed'
 }
 
-let ReactMemoryStatsComponent = React.createClass({
+let MemoryStatsComponent = React.createClass({
 
   getInitialState() {
     let Stats = new MemoryStats();
@@ -55,4 +55,4 @@ let ReactMemoryStatsComponent = React.createClass({
 
 });
 
-export default ReactMemoryStatsComponent;
+export default MemoryStatsComponent;

@@ -2,22 +2,23 @@
 
 This Component is based on Paul Irish's [memory-stats](https://github.com/paulirish/memory-stats.js).
 
+### Installation
+
+npm install react-memorystats --save
+
 ### Usage
 
 ```
-import ReactStatsMemoryComponent form 'react-stats-memory-component';
+import MemoryStatsComponent form 'react-memorystats';
 import React from 'react';
 
-let PageComponent = React.createClass({
-  render(){
-    return <div>
-      <ReactStatsMemoryComponent corner='topLeft'/>
-    </div>
-  }
-});
+React.render(
+  <MemoryStatsComponent corner="topLeft" />,
+  document.getElementById("container")
+);
 ```
 
-check the usage example [here](https://github.com/vigneshshanmugam/react-memory-stats/blob/master/test/test.js).
+check the example code [here](https://github.com/vigneshshanmugam/react-memory-stats/blob/master/example).
 
 ### Start Chrome with `--enable-precise-memory-info`
 
