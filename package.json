@@ -1,6 +1,6 @@
 {
   "name": "react-memorystats",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React Component for Memory Stats",
   "main": "lib/react-memory-stats.js",
   "scripts": {

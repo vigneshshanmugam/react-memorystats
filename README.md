@@ -2,6 +2,8 @@
 
 This Component is based on Paul Irish's [memory-stats](https://github.com/paulirish/memory-stats.js).
 
+![image](http://i.imgur.com/eUCFcAH.gif)
+
 ### Installation
 
 ```javascript
