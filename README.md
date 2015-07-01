@@ -4,12 +4,20 @@ This Component is based on Paul Irish's [memory-stats](https://github.com/paulir
 
 ### Usage
 
-``` javascript
+```
+import ReactStatsMemoryComponent form 'react-stats-memory-component';
+import React from 'react';
 
-
-
+let PageComponent = React.createClass({
+  render(){
+    return <div>
+      <ReactStatsMemoryComponent corner='topLeft'/>
+    </div>
+  }
+});
 ```
 
+check the usage example [here](https://github.com/vigneshshanmugam/react-memory-stats/blob/master/test/test.js).
 
 ### Start Chrome with `--enable-precise-memory-info`
 

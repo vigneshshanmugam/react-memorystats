@@ -2,7 +2,7 @@ import React from 'react';
 import MemoryStats from './src/memory-stats.js';
 
 let statsStyle = {
-  position: 'fixed',
+  position: 'fixed'
 }
 
 let ReactMemoryStatsComponent = React.createClass({
