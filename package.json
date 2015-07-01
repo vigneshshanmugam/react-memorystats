@@ -1,9 +1,10 @@
 {
   "name": "react-memory-stats",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "React Component for Memory Stats",
   "main": "index.js",
   "scripts": {
+    "build": "webpack ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,17 +12,21 @@
     "url": "git+https://github.com/vigneshshanmugam/react-memory-stats.git"
   },
   "keywords": [
+    "Memory-Stats",
     "React-Component",
-    "React",
-    "Memory",
-    "Stats",
-    "Memory",
-    "Stats"
+    "React-Memory-Stats"
   ],
   "author": "Vignesh Shanmugam",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/vigneshshanmugam/react-memory-stats/issues"
   },
-  "homepage": "https://github.com/vigneshshanmugam/react-memory-stats#readme"
+  "homepage": "https://github.com/vigneshshanmugam/react-memory-stats#readme",
+  "devDependencies": {
+    "babel-loader": "^5.2.2",
+    "webpack": "^1.10.0"
+  },
+  "dependencies": {
+    "react": "^0.13.3"
+  }
 }
