@@ -22,6 +22,10 @@ React.render(
 );
 ```
 
+#### Config
+
+   + corner - topLeft, topRight (default), bottomLeft, bottomRight
+
 check the example code [here](https://github.com/vigneshshanmugam/react-memory-stats/blob/master/example).
 
 ### Start Chrome with `--enable-precise-memory-info`
