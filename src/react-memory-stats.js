@@ -17,7 +17,7 @@ let MemoryStatsComponent = React.createClass({
 
   componentDidMount() {
     let rAFloop = () => {
-      this.refs.statsEle.getDOMNode().appendChild(this.state.stats.domElement);
+      this.refs.statsEle.appendChild(this.state.stats.domElement);
       this.state.stats.update();
       requestAnimationFrame(rAFloop);
     }
