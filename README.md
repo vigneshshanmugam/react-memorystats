@@ -13,10 +13,10 @@ npm install react-memorystats --save
 ### Usage
 
 ```
+import { render } from 'react-dom';
 import MemoryStatsComponent form 'react-memorystats';
-import React from 'react';
 
-React.render(
+render(
   <MemoryStatsComponent corner="topLeft" />,
   document.getElementById("container")
 );

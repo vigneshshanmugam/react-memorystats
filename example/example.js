@@ -1,4 +1,5 @@
-import MemoryStatsComponent from '../lib/react-memory-stats';
-import React from 'react';
+import React from 'react'
+import { render } from 'react-dom'
+import MemoryStatsComponent from '../src/react-memory-stats';
 
-React.render(<MemoryStatsComponent corner='bottomLeft'/>, document.getElementById('container'));
+render(<MemoryStatsComponent corner='bottomLeft'/>, document.getElementById('container'));
