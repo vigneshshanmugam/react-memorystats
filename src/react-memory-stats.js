@@ -1,58 +1,50 @@
-import React from 'react';
-import MemoryStats from './memory-stats.js';
+import React, { Component } from "react";
+import MemoryStats from "./memory-stats.js";
 
 let statsStyle = {
-  position: 'fixed'
-}
+  position: "fixed"
+};
 
-let MemoryStatsComponent = React.createClass({
-
-  getInitialState() {
-    let Stats = new MemoryStats();
-    return {
-      stats : Stats,
-      corner: this.props.corner || 'topRight'
-    }
-  },
+export default class MemoryStatsComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      stats: new MemoryStats(),
+      corner: props.corner || "topRight"
+    };
+    this.getCorner = this.getCorner.bind(this);
+  }
 
   componentDidMount() {
     let rAFloop = () => {
       this.refs.statsEle.appendChild(this.state.stats.domElement);
       this.state.stats.update();
       requestAnimationFrame(rAFloop);
-    }
+    };
     requestAnimationFrame(rAFloop);
-  },
-
-  getCorner() {
-    switch(this.state.corner) {
-      case 'topLeft':
-        statsStyle.top = '0px';
-        statsStyle.left = '0px';
-        break;
-      case 'topRight':
-        statsStyle.top = '0px';
-        statsStyle.right = '0px';
-        break;
-      case 'bottomLeft':
-        statsStyle.bottom = '0px';
-        statsStyle.left = '0px';
-        break;
-      case 'bottomRight':
-        statsStyle.bottom = '0px';
-        statsStyle.right = '0px';
-        break;
-    }
-    return statsStyle;
-  },
-
-  render() {
-    statsStyle = this.getCorner();
-
-    return <div style={statsStyle} ref='statsEle'>
-    </div>
   }
 
-});
+  getCorner(styles) {
+    switch (this.state.corner) {
+      case "topLeft":
+        Object.assign(styles, { top: "0px", left: "0px" });
+        break;
+      case "topRight":
+        Object.assign(styles, { top: "0px", right: "0px" });
+        break;
+      case "bottomLeft":
+        Object.assign(styles, { bottom: "0px", left: "0px" });
+        break;
+      case "bottomRight":
+        Object.assign(styles, { bottom: "0px", right: "0px" });
+        break;
+    }
+    return styles;
+  }
 
-export default MemoryStatsComponent;
+  render() {
+    statsStyle = this.getCorner(statsStyle);
+
+    return <div style={statsStyle} ref="statsEle" />;
+  }
+}

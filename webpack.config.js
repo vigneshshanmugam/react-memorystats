@@ -1,19 +1,22 @@
-var webpack = require('webpack')
+const webpack = require("webpack");
+const path = require("path");
+const SRC_DIR = path.join(__dirname, "src");
+const LIB_DIR = path.join(__dirname, "lib");
+
 module.exports = {
-  context: __dirname,
-  entry: './src/react-memory-stats',
+  entry: path.join(SRC_DIR, "react-memory-stats"),
   output: {
-    library: 'MemoryStats',
-    libraryTarget: 'umd',
-    filename: 'react-memory-stats.js',
-    path: './lib'
+    library: "MemoryStats",
+    libraryTarget: "umd",
+    filename: "react-memory-stats.js",
+    path: LIB_DIR
   },
   externals: {
-    'react': {
-      root: 'React',
-      commonjs2: 'react',
-      commonjs: 'react',
-      amd: 'react'
+    react: {
+      root: "React",
+      commonjs2: "react",
+      commonjs: "react",
+      amd: "react"
     }
   },
   module: {
@@ -21,12 +24,11 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: "babel-loader"
       }
     ]
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         pure_getters: true,
@@ -35,6 +37,6 @@ module.exports = {
         warnings: false
       }
     }),
-    new webpack.optimize.DedupePlugin()
+    new webpack.optimize.ModuleConcatenationPlugin()
   ]
-}
+};
