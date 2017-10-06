@@ -7,7 +7,7 @@ This Component is based on Paul Irish's [memory-stats](https://github.com/paulir
 ### Installation
 
 ```javascript
-npm install react-memorystats --save
+yarn add react-memorystats
 ```
 
 ### Usage
@@ -44,7 +44,9 @@ Otherwise the results from performance.memory are bucketed and less useful.
 ### Development
 
 ```javascript
-npm install
-npm start
+// install dependencies
+yarn install
+// run example locally and start server
+yarn start
 
 ```
