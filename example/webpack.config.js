@@ -1,6 +1,6 @@
-var path = require('path'),
-  inputPath = path.join(__dirname, 'example.js'),
-  outputPath = path.join(__dirname, 'static');
+const path = require("path");
+const inputPath = path.join(__dirname, "example.js");
+const outputPath = path.join(__dirname, "static");
 
 module.exports = {
   context: __dirname,
@@ -9,14 +9,14 @@ module.exports = {
   },
   output: {
     path: outputPath,
-    filename: 'bundle.js',
+    filename: "bundle.js"
   },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: "babel-loader"
       }
     ]
   }

@@ -2,3 +2,4 @@ node_modules
 npm-debug.log
 lib/memory-stats.js
 .DS_Store
+example/static
